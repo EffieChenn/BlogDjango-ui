@@ -6,7 +6,7 @@ const Blog = () => {
   const [featuredBlog, setFeaturedBlog] = useState([]);
 
   useEffect(() => {
-    fetch(`/api/blog`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/blog/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +19,7 @@ const Blog = () => {
   }, [blogs]);
 
   useEffect(() => {
-    fetch(`/api/blog/featured/`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/blog/featured/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
